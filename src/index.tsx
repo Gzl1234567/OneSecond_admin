@@ -7,16 +7,18 @@ import { ConfigProvider } from 'antd'
 import App from './App'
 import './index.css'
 
-const root = ReactDom.createRoot(document.getElementById('root')!)
+const root = ReactDom.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <StyleProvider hashPriority="high">
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: '#17bcff'
-        }
-      }}
-    />
-    <App />
-  </StyleProvider>
+  <div>
+    <StyleProvider hashPriority="high">
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#17bcff'
+          }
+        }}
+      />
+      <App />
+    </StyleProvider>
+  </div>
 )
