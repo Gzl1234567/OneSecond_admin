@@ -12,16 +12,16 @@ module.exports = {
     'plugin:import/typescript',
     'eslint:recommended'
   ], // 添加 prettier 插件],
-  parser: '@babel/eslint-parser',
+
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
       excludedFiles: '*.cz-config.*'
     }
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+    parser: 'babel-eslint'
   },
   plugins: ['react', '@babel', '@typescript-eslint'],
   rules: {
