@@ -15,6 +15,7 @@ export default function App() {
     <div>
       <Bar a={1} c={{ width: 100 }} d={[1, 2, 3]} />
       <h1>重新测试</h1>
+      <h1>重新测试git提交规范</h1>
       {/* <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/Home" />} />
