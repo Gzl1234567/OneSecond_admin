@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Home from '@/views/Home'
 import Bar from '@/components/bar'
 import Login from '@/views/Login'
@@ -19,7 +19,7 @@ export default function App() {
       <h1>重新测试git提交规范</h1> */}
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Navigate to="/Home" />} /> */}
+          <Route path="/" element={<Navigate to="/Login" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
         </Routes>

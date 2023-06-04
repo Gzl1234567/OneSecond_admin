@@ -5,6 +5,10 @@ import Login from '@/views/Login'
 export default function RouterConfig() {
   return useRoutes([
     {
+      path: '/',
+      element: <Login />
+    },
+    {
       path: '/login',
       element: <Login />
     }

@@ -1,14 +1,15 @@
+/* eslint-disable no-console */
 import React from 'react'
-// import { useRequest } from 'ahooks';
+import { useRequest } from 'ahooks'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Form, Input } from 'antd'
 import Logo from '@/assets/logo.svg'
 import Login from '@/assets/images/login.png'
-// import { getLogin } from '../../service/api';
+import { getLogin } from '@/service/index'
 
 function App() {
-  // const { data: loginData } = useRequest(getLogin);
-  // console.log(loginData);
+  const { data: loginData } = useRequest(getLogin)
+  console.log(loginData)
   const loginStyle = {
     boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 0px 0px, rgba(0, 0, 0, 0.19) 0px 2px 5px 1px'
   }
