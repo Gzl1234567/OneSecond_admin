@@ -9,15 +9,19 @@ import '@/assets/index.css'
 const root = ReactDom.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <div>
-    <StyleProvider hashPriority="high">
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: '#955ce6'
-          }
-        }}
-      />
-      <App />
-    </StyleProvider>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#955ce6',
+          colorSuccess: '#52c41a',
+          colorBorderSecondary: '#955ce6',
+          colorBorder: '#955ce6'
+        }
+      }}
+    >
+      <StyleProvider hashPriority="high">
+        <App />
+      </StyleProvider>
+    </ConfigProvider>
   </div>
 )
