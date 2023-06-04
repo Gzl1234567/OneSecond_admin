@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 import React from 'react'
-// import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-// import Home from '@/views/Home'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from '@/views/Home'
 import Bar from '@/components/bar'
+import Login from '@/views/Login'
 // 如何提取其它组件的props类型
 // React.ComponentProps<T>
 // 对于自定义组件/第三方组件 我们时使用typeof计算组件类型后提取 如Bar
@@ -14,14 +15,15 @@ export default function App() {
   return (
     <div>
       <Bar a={1} c={{ width: 100 }} d={[1, 2, 3]} />
-      <h1>重新测试</h1>
-      <h1>重新测试git提交规范</h1>
-      {/* <Router>
+      {/* <h1>重新测试</h1>
+      <h1>重新测试git提交规范</h1> */}
+      <Router>
         <Routes>
-          <Route path="/" element={<Navigate to="/Home" />} />
+          {/* <Route path="/" element={<Navigate to="/Home" />} /> */}
           <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
-      </Router> */}
+      </Router>
     </div>
   )
 }

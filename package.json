@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/cssinjs": "^1.9.1",
+    "@ant-design/icons": "^5.1.4",
     "@babel/eslint-plugin": "^7.19.1",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",

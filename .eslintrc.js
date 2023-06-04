@@ -42,6 +42,7 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 0,
     'react/require-default-props': 0,
     'react/no-unused-prop-types': 0,
+    'import/no-extraneous-dependencies': 0,
     'import/extensions': [
       'error',
       'ignorePackages',
