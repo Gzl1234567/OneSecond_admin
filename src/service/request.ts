@@ -8,10 +8,7 @@ import axios from 'axios'
 // }
 
 const request = axios.create({
-  baseURL:
-    process.env.NODE_ENV === 'development'
-      ? 'http://192.168.121.66.8888'
-      : 'http://api.cc0820.top:8888'
+  baseURL: 'http://localhost:3000'
 })
 
 // 接口定义
