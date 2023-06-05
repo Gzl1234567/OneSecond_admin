@@ -9,3 +9,5 @@ interface ApiResponse {
   data: any
 }
 export const getLogin = () => request.get<ApiResponse>('/api/admin/verifycode')
+
+export const getLo = () => request.get('/admin/config/appauth')
