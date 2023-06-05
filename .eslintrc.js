@@ -19,6 +19,7 @@ module.exports = {
       excludedFiles: '*.cz-config.*'
     }
   ],
+
   parser: '@typescript-eslint/parser',
   parserOptions: {
     parser: 'babel-eslint'
