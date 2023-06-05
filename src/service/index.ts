@@ -8,4 +8,4 @@ interface ApiResponse {
   message: string
   data: any
 }
-export const getLogin = () => request.get<ApiResponse>('/admin/verifycode')
+export const getLogin = () => request.get<ApiResponse>('/api/admin/verifycode')
