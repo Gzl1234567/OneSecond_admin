@@ -1,4 +1,6 @@
+/* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/prefer-default-export */
+// eslint-disable-next-line import/no-named-as-default
 import request from '@/service/request'
 import { AxiosPromise } from 'axios'
 // /**
@@ -25,29 +27,3 @@ interface LoginParams {
 type ILoginResponseData = { code: number; msg: string }
 export const LoginAdmin = (pararms: LoginParams): AxiosPromise<ILoginResponseData> =>
   request.post('admin/login', pararms)
-
-// interface ILogin {
-//   adminName: string;
-//   adminPwd: string;
-//   verifyCode: string;
-//   no: string;
-// }
-// type ILoginResponseData = { code: number; msg: string };
-
-// export const GetLogin = (params: ILogin): AxiosPromise<ILoginResponseData> => {
-//   const res = request.post('/admin/login', params);
-//   return res;
-// };
-// /**
-//  * 验证码接口
-//  */
-// type IVerifycodeResponseData = {
-//   code: number;
-//   msg: string;
-//   data: { svg: string; no: string };
-// };
-// export const GetVerifycode = async () => {
-//   const res = <AxiosPromise<IVerifycodeResponseData>>request.get('/admin/verifycode');
-//   return (await res).data.data;
-// };
-// export default {};
