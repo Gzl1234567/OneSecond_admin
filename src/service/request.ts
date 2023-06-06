@@ -8,8 +8,7 @@ import axios from 'axios'
 // }
 
 const request = axios.create({
-  baseURL: process.env.NODE_ENV === 'development' ? '/api' : 'http://192.168.121.66.8888'
-  // ''
+  baseURL: '/api'
 })
 
 // 接口定义
