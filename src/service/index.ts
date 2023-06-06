@@ -27,3 +27,56 @@ interface LoginParams {
 type ILoginResponseData = { code: number; msg: string }
 export const LoginAdmin = (pararms: LoginParams): AxiosPromise<ILoginResponseData> =>
   request.post('admin/login', pararms)
+
+type ResponseData = {
+  code: number
+  msg: string
+  data: {
+    adminNo: string
+    mobileNumber: string
+    adminName: string
+    realName: string
+    avatarUrl: object
+  }
+}
+export const getInfo = async () => {
+  const res = <AxiosPromise<ResponseData>>request.get('/admin/info')
+  return (await res).data.data
+}
+
+/**
+ * 获取代理列表数据
+ */
+export type IListQueryParams = {
+  current?: number
+  pageSize?: number
+}
+export type ResponseDataProxy = {
+  code: number
+  msg: string
+  data: {
+    pageSize: number
+    current: number
+    count: number
+    totalPages: number
+    data: {
+      agentNo: string
+      agentAccount: string
+      mobileNumber: string
+      realName: string
+      status: number
+      createTime: string
+      updateTime: string
+      defaultPwd: string
+      updatedBy: string
+    }[]
+  }
+}
+
+export const getUserList = async (params?: IListQueryParams) => {
+  const res = request.get('/admin/agent/list', {
+    params
+  }) as AxiosPromise<ResponseDataProxy>
+  return (await res).data
+}
+
