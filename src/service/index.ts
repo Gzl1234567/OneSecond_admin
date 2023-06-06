@@ -43,53 +43,22 @@ export const getInfo = async () => {
   const res = <AxiosPromise<ResponseData>>request.get('/admin/info')
   return (await res).data.data
 }
-
-/**
- * 获取代理列表数据
- */
-export type IListQueryParams = {
-  current?: number
-  pageSize?: number
-}
-export type ResponseDataProxy = {
-  // 计价规则
+// 数据总览
+type ResponseDataAll = {
   code: number
   msg: string
   data: {
-    pageSize: number
-    current: number
-    count: number
-    totalPages: number
+    userTotal: number
+    orderCompleteTotal: number
+    tradeTotal: number
+    incomeTotal: number
+    yesterdayUserTotal: string
+    yesterdayOrderCompleteTotal: string
+    yesterdayTradeTotal: number
+    yesterdayIncomeTotal: number
   }
 }
-type getResValuation = {
-  data: {
-    agentNo: string
-    agentAccount: string
-    mobileNumber: string
-    realName: string
-    status: number
-    createTime: string
-    updateTime: string
-    defaultPwd: string
-    updatedBy: string
-  }[]
-}
-export const getUserList = async (params?: IListQueryParams) => {
-  const res = request.get('/admin/agent/list', {
-    params
-  }) as AxiosPromise<ResponseDataProxy>
-  return (await res).data
-}
-
-interface GetValPar {
-  current: number
-  pageSize: number
-}
-export const getUserValueList = async (params?: GetValPar) => {
-  const res = request.get('admin/citys/valuation/list', { params }) as AxiosPromise<getResValuation>
+export const getDataAll = async () => {
+  const res = <AxiosPromise<ResponseDataAll>>request.get('/admin/analysis/total')
   return (await res).data.data
 }
-// export const getVal = () =>
-//   request.get<getResValuation>('/admin/citys/valuation/list?current=1&pageSize=20')
-// console.log(getVal)
