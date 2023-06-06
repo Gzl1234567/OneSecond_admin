@@ -48,6 +48,7 @@ export default function Login() {
   // const { data: img } = useRequest(getLogin)
   // console.log(img)
   const navgigate = useNavigate()
+
   // 登录接口
   const { run: RunLogin } = useRequest(LoginAdmin, {
     manual: true,
@@ -71,7 +72,6 @@ export default function Login() {
     getLogin().then((res) => {
       setVerifyCodeImg(res.svg)
       setNo(res.no)
-      // console.log(res)
     })
   }, [])
   // 获取验证码

@@ -27,3 +27,38 @@ interface LoginParams {
 type ILoginResponseData = { code: number; msg: string }
 export const LoginAdmin = (pararms: LoginParams): AxiosPromise<ILoginResponseData> =>
   request.post('admin/login', pararms)
+
+type ResponseData = {
+  code: number
+  msg: string
+  data: {
+    adminNo: string
+    mobileNumber: string
+    adminName: string
+    realName: string
+    avatarUrl: object
+  }
+}
+export const getInfo = async () => {
+  const res = <AxiosPromise<ResponseData>>request.get('/admin/info')
+  return (await res).data.data
+}
+// 数据总览
+type ResponseDataAll = {
+  code: number
+  msg: string
+  data: {
+    userTotal: number
+    orderCompleteTotal: number
+    tradeTotal: number
+    incomeTotal: number
+    yesterdayUserTotal: string
+    yesterdayOrderCompleteTotal: string
+    yesterdayTradeTotal: number
+    yesterdayIncomeTotal: number
+  }
+}
+export const getDataAll = async () => {
+  const res = <AxiosPromise<ResponseDataAll>>request.get('/admin/analysis/total')
+  return (await res).data.data
+}
