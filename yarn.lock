@@ -10893,6 +10893,11 @@ stop-iteration-iterator@^1.0.0:
   dependencies:
     internal-slot "^1.0.4"
 
+storejs@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npmmirror.com/storejs/-/storejs-2.0.5.tgz#88e5f1473f637bfd7fae4cc7d0fdaa70613c7984"
+  integrity sha512-x+D6nhQDx6FVVFap8f9Fyj9o3GH02mgjmu4/W432HrR1S+rGBCUUpViPVtcersKJ8BAt28RA4A4I35Oj3J59Xw==
+
 string-argv@^0.3.1:
   version "0.3.2"
   resolved "https://registry.npmmirror.com/string-argv/-/string-argv-0.3.2.tgz"
@@ -11119,7 +11124,15 @@ stylis@^3.5.4:
   resolved "https://registry.npmmirror.com/stylis/-/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
   integrity sha512-8/3pSmthWM7lsPBKv7NXkzn2Uc9W7NotcwGNpJaa3k7WMM1XDCA4MgT5k/8BIexd5ydZdboXtU90XH9Ec4Bv/Q==
 
+<<<<<<< HEAD
 stylis@^4.0.13, stylis@^4.2.0:
+=======
+<<<<<<< HEAD
+stylis@^4.0.13, stylis@^4.2.0:
+=======
+stylis@^4.0.13:
+>>>>>>> a4e43beaadad3b9c93c24deff8cc757e05228d64
+>>>>>>> d3ae66b3dbffef6d83668864058b28c63769132b
   version "4.2.0"
   resolved "https://registry.npmmirror.com/stylis/-/stylis-4.2.0.tgz#79daee0208964c8fe695a42fcffcac633a211a51"
   integrity sha512-Orov6g6BB1sDfYgzWfTHDOxamtX1bE/zo104Dh9e6fqJ3PooipYyfJ0pUmrZO2wAvO8YbEyeFrkV91XTsGMSrw==
