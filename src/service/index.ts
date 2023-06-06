@@ -52,6 +52,7 @@ export type IListQueryParams = {
   pageSize?: number
 }
 export type ResponseDataProxy = {
+  // 计价规则
   code: number
   msg: string
   data: {
@@ -59,20 +60,21 @@ export type ResponseDataProxy = {
     current: number
     count: number
     totalPages: number
-    data: {
-      agentNo: string
-      agentAccount: string
-      mobileNumber: string
-      realName: string
-      status: number
-      createTime: string
-      updateTime: string
-      defaultPwd: string
-      updatedBy: string
-    }[]
   }
 }
-
+type getResValuation = {
+  data: {
+    agentNo: string
+    agentAccount: string
+    mobileNumber: string
+    realName: string
+    status: number
+    createTime: string
+    updateTime: string
+    defaultPwd: string
+    updatedBy: string
+  }[]
+}
 export const getUserList = async (params?: IListQueryParams) => {
   const res = request.get('/admin/agent/list', {
     params
@@ -80,3 +82,14 @@ export const getUserList = async (params?: IListQueryParams) => {
   return (await res).data
 }
 
+interface GetValPar {
+  current: number
+  pageSize: number
+}
+export const getUserValueList = async (params?: GetValPar) => {
+  const res = request.get('admin/citys/valuation/list', { params }) as AxiosPromise<getResValuation>
+  return (await res).data.data
+}
+// export const getVal = () =>
+//   request.get<getResValuation>('/admin/citys/valuation/list?current=1&pageSize=20')
+// console.log(getVal)

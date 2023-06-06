@@ -25,6 +25,7 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "storejs": "^2.0.5",
+    "react-search-box": "^3.0.0",
     "styled-components": "^6.0.0-rc.3",
     "typescript-eslint-parser": "^22.0.0",
     "vue-styled-components": "^1.6.0",

@@ -39,6 +39,8 @@ import RiderGuide from '@/components/SystemSettings/RiderGuide' // 骑手指南
 import ShareSetting from '@/components/SystemSettings/ShareSetting' // 分享设置
 import TotalSetting from '@/components/SystemSettings/TotalSetting' // 积分设置
 import UserGuide from '@/components/SystemSettings/UserGuide' // 用户指南
+import PricingList from '@/components/AddList/PricingList'
+import ChangeRules from '@/components/AddList/ChangeRules'
 
 const silder = [
   {
@@ -82,7 +84,10 @@ const silder = [
     label: '运营管理',
     icon: ControlFilled,
     children: [
-      { label: '计价规则', link: 'PricingRule' },
+      {
+        label: '计价规则',
+        link: 'PricingRule'
+      },
       { label: '重量标签', link: 'WeightLabel' },
       { label: '物品标签组', link: 'ArticleLabel' }
     ]
@@ -209,6 +214,8 @@ const App: React.FC = () => {
               <Route path="/ShareSetting" element={<ShareSetting />} />
               <Route path="/TotalSetting" element={<TotalSetting />} />
               <Route path="/UserGuide" element={<UserGuide />} />
+              <Route path="/PricingRule/PricingList" element={<PricingList />} />
+              <Route path="/PricingRule/ChangeRules" element={<ChangeRules />} />
             </Routes>
 
             {/* <Router>
