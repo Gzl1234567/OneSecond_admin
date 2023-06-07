@@ -30,9 +30,18 @@ import TotalSetting from '@/components/SystemSettings/TotalSetting' // 积分设
 import UserGuide from '@/components/SystemSettings/UserGuide' // 用户指南
 import PersonalSetting from '@/views/info/PersonalSetting'
 import ChangePassword from '@/views/info/ChangePassword'
+import styled from 'styled-components'
 import Logout from './Logout'
 import silder from './silderList'
 
+const Styled = styled.div`
+  .ant-layout-content {
+    height: 714px !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow: auto;
+  }
+`
 const { Header, Content, Sider } = Layout
 
 const App: React.FC = () => {
@@ -71,71 +80,73 @@ const App: React.FC = () => {
     navigate('DataAll')
   }, [])
   return (
-    <Layout>
-      <Header
-        className="mb-5 flex justify-between"
-        style={{ display: 'flex', alignItems: 'center', backgroundColor: '#fff' }}
-      >
-        <div className="flex items-center">
-          <img src={Logo} alt="" className="w-[45px] h-[30px] align-middle" />
-          <div className="text-[20px] ml-3 font-bold text-[#333333]">一秒快送后台管理系统</div>
-        </div>
-        <div>
-          <Logout />
-        </div>
-      </Header>
+    <Styled>
       <Layout>
-        <Sider width={200} style={{ background: colorBgContainer }}>
-          <Menu
-            mode="inline"
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-            style={{ height: '100%', borderRight: 0 }}
-            items={items2}
-          />
-        </Sider>
-        <Layout style={{ padding: '0 24px 24px' }}>
-          <Content
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-              background: colorBgContainer
-            }}
-          >
-            <Routes>
-              <Route path="/" element={<Navigate to="DataAll" />} />
-              <Route path="/DataAll" element={<DataAll />} />
-              <Route path="/AdminList" element={<AdminList />} />
-              <Route path="/UserList" element={<UserList />} />
-              <Route path="/ProxyList" element={<ProxyList />} />
-              <Route path="/OrderList" element={<OrderList />} />
-              <Route path="/MoneygoList" element={<MoneygoList />} />
-              <Route path="/CancelOrder" element={<CancelOrder />} />
-              <Route path="/TipOption" element={<TipOption />} />
-              <Route path="/RiderList" element={<RiderList />} />
-              <Route path="/RiderCheckList" element={<RiderCheckList />} />
-              <Route path="/CityRun" element={<CityRun />} />
-              <Route path="/CouponList" element={<CouponList />} />
-              <Route path="/CouponSetting" element={<CouponSetting />} />
-              <Route path="/ArticleLabel" element={<ArticleLabel />} />
-              <Route path="/PricingRule" element={<PricingRule />} />
-              <Route path="/WeightLabel" element={<WeightLabel />} />
-              <Route path="/DepositList" element={<DepositList />} />
-              <Route path="/DepositSetting" element={<DepositSetting />} />
-              <Route path="/MessageSetting" element={<MessageSetting />} />
-              <Route path="/MiniSetting" element={<MiniSetting />} />
-              <Route path="/RiderGuide" element={<RiderGuide />} />
-              <Route path="/ShareSetting" element={<ShareSetting />} />
-              <Route path="/TotalSetting" element={<TotalSetting />} />
-              <Route path="/UserGuide" element={<UserGuide />} />
-              <Route path="/PersonalSetting" element={<PersonalSetting />} />
-              <Route path="/ChangePassword" element={<ChangePassword />} />
-            </Routes>
-          </Content>
+        <Header
+          className="mb-5 flex justify-between"
+          style={{ display: 'flex', alignItems: 'center', backgroundColor: '#fff' }}
+        >
+          <div className="flex items-center">
+            <img src={Logo} alt="" className="w-[45px] h-[30px] align-middle" />
+            <div className="text-[20px] ml-3 font-bold text-[#333333]">一秒快送后台管理系统</div>
+          </div>
+          <div>
+            <Logout />
+          </div>
+        </Header>
+        <Layout>
+          <Sider width={200} style={{ background: colorBgContainer }}>
+            <Menu
+              mode="inline"
+              defaultSelectedKeys={['1']}
+              defaultOpenKeys={['sub1']}
+              style={{ height: '100%', borderRight: 0 }}
+              items={items2}
+            />
+          </Sider>
+          <Layout style={{ padding: '0 24px 24px' }}>
+            <Content
+              style={{
+                padding: 24,
+                margin: 0,
+                minHeight: 280,
+                background: colorBgContainer
+              }}
+            >
+              <Routes>
+                <Route path="/" element={<Navigate to="DataAll" />} />
+                <Route path="/DataAll" element={<DataAll />} />
+                <Route path="/AdminList" element={<AdminList />} />
+                <Route path="/UserList" element={<UserList />} />
+                <Route path="/ProxyList" element={<ProxyList />} />
+                <Route path="/OrderList" element={<OrderList />} />
+                <Route path="/MoneygoList" element={<MoneygoList />} />
+                <Route path="/CancelOrder" element={<CancelOrder />} />
+                <Route path="/TipOption" element={<TipOption />} />
+                <Route path="/RiderList" element={<RiderList />} />
+                <Route path="/RiderCheckList" element={<RiderCheckList />} />
+                <Route path="/CityRun" element={<CityRun />} />
+                <Route path="/CouponList" element={<CouponList />} />
+                <Route path="/CouponSetting" element={<CouponSetting />} />
+                <Route path="/ArticleLabel" element={<ArticleLabel />} />
+                <Route path="/PricingRule" element={<PricingRule />} />
+                <Route path="/WeightLabel" element={<WeightLabel />} />
+                <Route path="/DepositList" element={<DepositList />} />
+                <Route path="/DepositSetting" element={<DepositSetting />} />
+                <Route path="/MessageSetting" element={<MessageSetting />} />
+                <Route path="/MiniSetting" element={<MiniSetting />} />
+                <Route path="/RiderGuide" element={<RiderGuide />} />
+                <Route path="/ShareSetting" element={<ShareSetting />} />
+                <Route path="/TotalSetting" element={<TotalSetting />} />
+                <Route path="/UserGuide" element={<UserGuide />} />
+                <Route path="/PersonalSetting" element={<PersonalSetting />} />
+                <Route path="/ChangePassword" element={<ChangePassword />} />
+              </Routes>
+            </Content>
+          </Layout>
         </Layout>
       </Layout>
-    </Layout>
+    </Styled>
   )
 }
 
