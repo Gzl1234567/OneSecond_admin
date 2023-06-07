@@ -31,6 +31,7 @@ import UserGuide from '@/components/SystemSettings/UserGuide' // 用户指南
 import PersonalSetting from '@/views/info/PersonalSetting'
 import ChangePassword from '@/views/info/ChangePassword'
 import styled from 'styled-components'
+import AddCity from '@/components/CityAdmin/Add'
 import Logout from './Logout'
 import silder from './silderList'
 
@@ -141,6 +142,7 @@ const App: React.FC = () => {
                 <Route path="/UserGuide" element={<UserGuide />} />
                 <Route path="/PersonalSetting" element={<PersonalSetting />} />
                 <Route path="/ChangePassword" element={<ChangePassword />} />
+                <Route path="/CityRun/addCity" element={<AddCity />} />
               </Routes>
             </Content>
           </Layout>

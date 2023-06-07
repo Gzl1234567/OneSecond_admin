@@ -64,3 +64,9 @@ export const getDataAll = async () => {
 }
 // 分享设置数据
 export const getFenXian = () => request.get('/admin/config/share')
+
+// 添加城市
+type AddData = { code: number; msg: string }
+// export const AddCitys = (porops:AddCity) => request.get('admin/agent/list',porops)
+export const AddCitys = (params: any): AxiosPromise<AddData> =>
+  request.get('admin/agent/list', params)
