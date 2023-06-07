@@ -62,3 +62,5 @@ export const getDataAll = async () => {
   const res = <AxiosPromise<ResponseDataAll>>request.get('/admin/analysis/total')
   return (await res).data.data
 }
+// 分享设置数据
+export const getFenXian = () => request.get('/admin/config/share')
