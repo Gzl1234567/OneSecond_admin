@@ -10,7 +10,7 @@ export default function RouterConfig() {
       element: <Login />
     },
     {
-      path: '/login',
+      path: '/Login',
       element: <Login />
     },
     {

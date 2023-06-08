@@ -43,14 +43,39 @@ export const getInfo = async () => {
   const res = <AxiosPromise<ResponseData>>request.get('/admin/info')
   return (await res).data.data
 }
+// 数据总览
+type ResponseDataAll = {
+  code: number
+  msg: string
+  data: {
+    userTotal: number
+    orderCompleteTotal: number
+    tradeTotal: number
+    incomeTotal: number
+    yesterdayUserTotal: string
+    yesterdayOrderCompleteTotal: string
+    yesterdayTradeTotal: number
+    yesterdayIncomeTotal: number
+  }
+}
+export const getDataAll = async () => {
+  const res = <AxiosPromise<ResponseDataAll>>request.get('/admin/analysis/total')
+  return (await res).data.data
+}
+// 分享设置数据
+export const getFenXian = () => request.get('/admin/config/share')
 
-/**
- * 获取代理列表数据
- */
+// 添加城市
+type AddData = { code: number; msg: string }
+// export const AddCitys = (porops:AddCity) => request.get('admin/agent/list',porops)
+export const AddCitys = (params: any): AxiosPromise<AddData> =>
+  request.get('admin/agent/list', params)
+
 export type IListQueryParams = {
   current?: number
   pageSize?: number
 }
+
 export type ResponseDataProxy = {
   code: number
   msg: string
@@ -74,9 +99,8 @@ export type ResponseDataProxy = {
 }
 
 export const getUserList = async (params?: IListQueryParams) => {
-  const res = request.get('/admin/agent/list', {
+  const res = request.get('/admin/agentst', {
     params
   }) as AxiosPromise<ResponseDataProxy>
   return (await res).data
 }
-
