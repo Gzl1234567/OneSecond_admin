@@ -6,7 +6,6 @@ export default function Auth(props: any) {
   const navgigate = useNavigate()
   const localtion = useLocation()
   const token = localStorage.getItem('token')
-  console.log(token)
   useEffect(() => {
     if (!token && !props.value.includes(localtion.pathname)) {
       navgigate('/login')
