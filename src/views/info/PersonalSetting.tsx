@@ -53,7 +53,6 @@ export default function App() {
   const [imageUrl, setImageUrl] = useState<string>()
   const [form] = Form.useForm()
   const [searchParams, setSearchParams] = useSearchParams()
-  console.log(searchParams.get('name'))
 
   const { setFieldsValue } = form
   useEffect(() => {

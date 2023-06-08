@@ -11,7 +11,6 @@ import styled from 'styled-components'
 import { RedoOutlined } from '@ant-design/icons'
 // import { getUserValueList } from '@/service'
 import { useNavigate, Route, Routes } from 'react-router-dom'
-import ReactSearchBox from 'react-search-box'
 import PricingList from '../AddList/PricingList'
 import ChangeRules from '../AddList/ChangeRules'
 

@@ -70,3 +70,37 @@ type AddData = { code: number; msg: string }
 // export const AddCitys = (porops:AddCity) => request.get('admin/agent/list',porops)
 export const AddCitys = (params: any): AxiosPromise<AddData> =>
   request.get('admin/agent/list', params)
+
+export type IListQueryParams = {
+  current?: number
+  pageSize?: number
+}
+
+export type ResponseDataProxy = {
+  code: number
+  msg: string
+  data: {
+    pageSize: number
+    current: number
+    count: number
+    totalPages: number
+    data: {
+      agentNo: string
+      agentAccount: string
+      mobileNumber: string
+      realName: string
+      status: number
+      createTime: string
+      updateTime: string
+      defaultPwd: string
+      updatedBy: string
+    }[]
+  }
+}
+
+export const getUserList = async (params?: IListQueryParams) => {
+  const res = request.get('/admin/agentst', {
+    params
+  }) as AxiosPromise<ResponseDataProxy>
+  return (await res).data
+}
